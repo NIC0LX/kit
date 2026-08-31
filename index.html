@@ -1,0 +1,1900 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Entre Nosotras | Mujeres que migran</title>
+
+  <meta
+    name="description"
+    content="Un espacio digital para conectar, escuchar y acompañar a mujeres migrantes internas."
+  >
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+
+    /* =========================
+       VARIABLES
+    ========================= */
+
+    :root {
+      --green: #17665b;
+      --green-dark: #0d453e;
+      --green-light: #dceee8;
+
+      --purple: #7654a8;
+      --purple-light: #eee7f7;
+
+      --orange: #e87945;
+      --orange-light: #fff0e8;
+
+      --cream: #faf7f1;
+      --white: #ffffff;
+
+      --black: #202522;
+      --gray: #68716d;
+      --border: #dedfda;
+
+      --max-width: 1200px;
+
+      --serif: "Playfair Display", Georgia, serif;
+      --sans: "DM Sans", Arial, sans-serif;
+    }
+
+
+    /* =========================
+       RESET
+    ========================= */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--sans);
+      color: var(--black);
+      background: var(--cream);
+      line-height: 1.6;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font-family: inherit;
+    }
+
+
+    /* =========================
+       NAVBAR
+    ========================= */
+
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+
+      background: rgba(250, 247, 241, 0.94);
+      backdrop-filter: blur(12px);
+
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+    }
+
+    .nav-container {
+      max-width: var(--max-width);
+      margin: auto;
+
+      height: 78px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      padding: 0 25px;
+    }
+
+    .logo {
+      font-family: var(--serif);
+      font-size: 1.55rem;
+      font-weight: 700;
+
+      color: var(--green-dark);
+    }
+
+    .logo span {
+      color: var(--orange);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.88rem;
+      font-weight: 600;
+
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--orange);
+    }
+
+    .nav-social {
+      display: flex;
+      gap: 12px;
+
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    .menu-button {
+      display: none;
+
+      border: none;
+      background: transparent;
+
+      font-size: 1.6rem;
+      cursor: pointer;
+    }
+
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      min-height: 100vh;
+
+      position: relative;
+
+      display: flex;
+      align-items: center;
+
+      overflow: hidden;
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(13,69,62,0.93) 0%,
+          rgba(13,69,62,0.75) 42%,
+          rgba(13,69,62,0.20) 100%
+        ),
+        url("https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=2000&q=85");
+
+      background-size: cover;
+      background-position: center;
+    }
+
+    .hero-container {
+      max-width: var(--max-width);
+      width: 100%;
+
+      margin: auto;
+
+      padding: 130px 25px 80px;
+    }
+
+    .hero-content {
+      max-width: 720px;
+      color: white;
+    }
+
+    .eyebrow {
+      display: inline-block;
+
+      margin-bottom: 20px;
+
+      padding: 8px 15px;
+
+      border-radius: 100px;
+
+      background: var(--orange);
+
+      font-size: 0.75rem;
+      font-weight: 700;
+
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+
+    .hero h1 {
+      font-family: var(--serif);
+
+      font-size: clamp(3.5rem, 8vw, 7rem);
+
+      line-height: 0.98;
+
+      margin-bottom: 28px;
+
+      max-width: 800px;
+    }
+
+    .hero h1 span {
+      color: #ffc5a5;
+    }
+
+    .hero p {
+      max-width: 600px;
+
+      font-size: 1.2rem;
+
+      margin-bottom: 35px;
+
+      color: rgba(255,255,255,0.92);
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+
+      gap: 14px;
+    }
+
+
+    /* =========================
+       BUTTONS
+    ========================= */
+
+    .button {
+      display: inline-flex;
+
+      align-items: center;
+      justify-content: center;
+
+      padding: 14px 23px;
+
+      border-radius: 100px;
+
+      font-size: 0.88rem;
+      font-weight: 700;
+
+      transition: 0.3s;
+
+      cursor: pointer;
+    }
+
+    .button-primary {
+      background: var(--orange);
+      color: white;
+    }
+
+    .button-primary:hover {
+      background: #d96535;
+      transform: translateY(-2px);
+    }
+
+    .button-light {
+      background: white;
+      color: var(--green-dark);
+    }
+
+    .button-light:hover {
+      background: var(--green-light);
+      transform: translateY(-2px);
+    }
+
+    .button-outline {
+      border: 1px solid var(--green);
+      color: var(--green);
+      background: transparent;
+    }
+
+    .button-outline:hover {
+      background: var(--green);
+      color: white;
+    }
+
+
+    /* =========================
+       GENERAL
+    ========================= */
+
+    section {
+      padding: 110px 25px;
+    }
+
+    .container {
+      max-width: var(--max-width);
+      margin: auto;
+    }
+
+    .section-label {
+      color: var(--orange);
+
+      font-size: 0.75rem;
+      font-weight: 700;
+
+      text-transform: uppercase;
+      letter-spacing: 2px;
+
+      margin-bottom: 15px;
+    }
+
+    .section-title {
+      font-family: var(--serif);
+
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+
+      line-height: 1.05;
+
+      margin-bottom: 25px;
+    }
+
+    .section-intro {
+      max-width: 650px;
+
+      font-size: 1.05rem;
+
+      color: var(--gray);
+    }
+
+
+    /* =========================
+       ABOUT
+    ========================= */
+
+    .about {
+      background: var(--cream);
+    }
+
+    .about-grid {
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+
+      gap: 80px;
+
+      align-items: center;
+    }
+
+    .about-image {
+      border-radius: 22px;
+
+      overflow: hidden;
+
+      aspect-ratio: 4 / 5;
+    }
+
+    .about-image img {
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .about-text p {
+      margin-bottom: 25px;
+
+      color: var(--gray);
+
+      font-size: 1.05rem;
+    }
+
+    .values {
+      display: grid;
+
+      grid-template-columns: repeat(3, 1fr);
+
+      gap: 15px;
+
+      margin-top: 35px;
+    }
+
+    .value {
+      padding: 20px;
+
+      border-radius: 15px;
+
+      background: white;
+
+      border: 1px solid var(--border);
+    }
+
+    .value strong {
+      display: block;
+
+      color: var(--green);
+
+      margin-bottom: 5px;
+    }
+
+    .value span {
+      font-size: 0.85rem;
+
+      color: var(--gray);
+    }
+
+
+    /* =========================
+       THREE OPTIONS
+    ========================= */
+
+    .options {
+      background: var(--green-dark);
+
+      color: white;
+    }
+
+    .options .section-intro {
+      color: rgba(255,255,255,0.72);
+    }
+
+    .options-grid {
+      display: grid;
+
+      grid-template-columns: repeat(3, 1fr);
+
+      gap: 20px;
+
+      margin-top: 55px;
+    }
+
+    .option-card {
+      position: relative;
+
+      padding: 40px 32px;
+
+      min-height: 360px;
+
+      border-radius: 22px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      transition: 0.35s;
+
+      overflow: hidden;
+    }
+
+    .option-card:hover {
+      transform: translateY(-8px);
+    }
+
+    .option-card.podcast {
+      background: var(--orange);
+    }
+
+    .option-card.forum {
+      background: var(--purple);
+    }
+
+    .option-card.support {
+      background: #d6e9df;
+
+      color: var(--green-dark);
+    }
+
+    .option-icon {
+      font-size: 3rem;
+
+      margin-bottom: 20px;
+    }
+
+    .option-card h3 {
+      font-family: var(--serif);
+
+      font-size: 2.4rem;
+
+      margin-bottom: 12px;
+    }
+
+    .option-card p {
+      font-size: 0.95rem;
+
+      opacity: 0.9;
+
+      max-width: 330px;
+    }
+
+    .option-link {
+      display: inline-flex;
+
+      align-items: center;
+
+      margin-top: 30px;
+
+      font-size: 0.85rem;
+
+      font-weight: 700;
+    }
+
+
+    /* =========================
+       STORIES
+    ========================= */
+
+    .stories {
+      background: white;
+    }
+
+    .stories-header {
+      display: flex;
+
+      justify-content: space-between;
+      align-items: end;
+
+      gap: 30px;
+    }
+
+    .stories-grid {
+      display: grid;
+
+      grid-template-columns: repeat(3, 1fr);
+
+      gap: 25px;
+
+      margin-top: 55px;
+    }
+
+    .story-card {
+      background: var(--cream);
+
+      border-radius: 18px;
+
+      overflow: hidden;
+
+      transition: 0.3s;
+    }
+
+    .story-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .story-image {
+      height: 290px;
+
+      overflow: hidden;
+    }
+
+    .story-image img {
+      height: 100%;
+
+      object-fit: cover;
+
+      transition: 0.5s;
+    }
+
+    .story-card:hover img {
+      transform: scale(1.05);
+    }
+
+    .story-content {
+      padding: 25px;
+    }
+
+    .story-meta {
+      color: var(--orange);
+
+      font-size: 0.72rem;
+
+      font-weight: 700;
+
+      text-transform: uppercase;
+
+      letter-spacing: 1px;
+    }
+
+    .story-content h3 {
+      font-family: var(--serif);
+
+      font-size: 1.65rem;
+
+      margin: 8px 0 12px;
+    }
+
+    .story-content p {
+      color: var(--gray);
+
+      font-size: 0.9rem;
+
+      margin-bottom: 20px;
+    }
+
+
+    /* =========================
+       COMMUNITY
+    ========================= */
+
+    .community {
+      background: var(--orange-light);
+    }
+
+    .community-grid {
+      display: grid;
+
+      grid-template-columns: 0.9fr 1.1fr;
+
+      gap: 70px;
+
+      align-items: center;
+    }
+
+    .forum-preview {
+      background: white;
+
+      border-radius: 20px;
+
+      padding: 25px;
+
+      box-shadow: 0 15px 50px rgba(0,0,0,0.07);
+    }
+
+    .forum-header {
+      display: flex;
+
+      justify-content: space-between;
+
+      align-items: center;
+
+      padding-bottom: 20px;
+
+      border-bottom: 1px solid var(--border);
+
+      margin-bottom: 10px;
+    }
+
+    .forum-header strong {
+      font-family: var(--serif);
+
+      font-size: 1.5rem;
+    }
+
+    .online {
+      font-size: 0.75rem;
+
+      color: #3d936c;
+
+      font-weight: 700;
+    }
+
+    .forum-post {
+      padding: 18px 5px;
+
+      border-bottom: 1px solid var(--border);
+    }
+
+    .forum-post:last-child {
+      border-bottom: none;
+    }
+
+    .forum-post h4 {
+      font-size: 0.95rem;
+
+      margin-bottom: 5px;
+    }
+
+    .forum-post span {
+      font-size: 0.75rem;
+
+      color: var(--gray);
+    }
+
+
+    /* =========================
+       SUPPORT
+    ========================= */
+
+    .support-section {
+      background: var(--purple-light);
+    }
+
+    .support-grid {
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+
+      gap: 70px;
+
+      align-items: center;
+    }
+
+    .support-box {
+      background: white;
+
+      padding: 35px;
+
+      border-radius: 20px;
+
+      border-left: 6px solid var(--purple);
+    }
+
+    .support-item {
+      display: flex;
+
+      gap: 15px;
+
+      padding: 18px 0;
+
+      border-bottom: 1px solid var(--border);
+    }
+
+    .support-item:last-child {
+      border-bottom: none;
+    }
+
+    .support-number {
+      width: 35px;
+      height: 35px;
+
+      display: grid;
+      place-items: center;
+
+      flex-shrink: 0;
+
+      border-radius: 50%;
+
+      background: var(--purple-light);
+
+      color: var(--purple);
+
+      font-weight: 700;
+    }
+
+    .support-item strong {
+      display: block;
+
+      margin-bottom: 3px;
+    }
+
+    .support-item span {
+      color: var(--gray);
+
+      font-size: 0.85rem;
+    }
+
+
+    /* =========================
+       THESIS
+    ========================= */
+
+    .thesis {
+      background: var(--green);
+      color: white;
+    }
+
+    .thesis-grid {
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+
+      gap: 80px;
+    }
+
+    .thesis .section-intro {
+      color: rgba(255,255,255,0.8);
+    }
+
+    .objectives {
+      display: grid;
+
+      gap: 20px;
+    }
+
+    .objective {
+      display: grid;
+
+      grid-template-columns: 55px 1fr;
+
+      gap: 20px;
+
+      align-items: start;
+
+      padding-bottom: 20px;
+
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .objective-number {
+      font-family: var(--serif);
+
+      font-size: 2rem;
+
+      color: #ffc5a5;
+    }
+
+    .objective h3 {
+      margin-bottom: 5px;
+    }
+
+    .objective p {
+      color: rgba(255,255,255,0.72);
+
+      font-size: 0.9rem;
+    }
+
+    .institution {
+      margin-top: 45px;
+
+      padding: 20px;
+
+      border-radius: 12px;
+
+      background: rgba(255,255,255,0.1);
+
+      font-size: 0.85rem;
+    }
+
+
+    /* =========================
+       CTA
+    ========================= */
+
+    .final-cta {
+      padding: 100px 25px;
+
+      background: var(--cream);
+
+      text-align: center;
+    }
+
+    .final-cta h2 {
+      max-width: 850px;
+
+      margin: auto auto 25px;
+
+      font-family: var(--serif);
+
+      font-size: clamp(2.8rem, 6vw, 5.5rem);
+
+      line-height: 1.05;
+    }
+
+    .final-cta p {
+      max-width: 550px;
+
+      margin: 0 auto 30px;
+
+      color: var(--gray);
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      background: #102f2b;
+
+      color: white;
+
+      padding: 60px 25px 30px;
+    }
+
+    .footer-grid {
+      max-width: var(--max-width);
+
+      margin: auto;
+
+      display: grid;
+
+      grid-template-columns: 2fr 1fr 1fr;
+
+      gap: 50px;
+    }
+
+    .footer-logo {
+      font-family: var(--serif);
+
+      font-size: 1.7rem;
+
+      margin-bottom: 15px;
+    }
+
+    .footer-description {
+      max-width: 400px;
+
+      color: rgba(255,255,255,0.65);
+
+      font-size: 0.85rem;
+    }
+
+    .footer-column h4 {
+      margin-bottom: 15px;
+    }
+
+    .footer-column a {
+      display: block;
+
+      margin-bottom: 8px;
+
+      color: rgba(255,255,255,0.65);
+
+      font-size: 0.85rem;
+    }
+
+    .footer-column a:hover {
+      color: white;
+    }
+
+    .footer-bottom {
+      max-width: var(--max-width);
+
+      margin: 45px auto 0;
+
+      padding-top: 20px;
+
+      border-top: 1px solid rgba(255,255,255,0.15);
+
+      color: rgba(255,255,255,0.5);
+
+      font-size: 0.75rem;
+    }
+
+
+    /* =========================
+       RESPONSIVE
+    ========================= */
+
+    @media (max-width: 900px) {
+
+      .nav-links,
+      .nav-social {
+        display: none;
+      }
+
+      .menu-button {
+        display: block;
+      }
+
+      .about-grid,
+      .community-grid,
+      .support-grid,
+      .thesis-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .options-grid,
+      .stories-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .values {
+        grid-template-columns: 1fr;
+      }
+
+      .stories-header {
+        display: block;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        font-size: clamp(3rem, 13vw, 5rem);
+      }
+    }
+
+
+    @media (max-width: 600px) {
+
+      section {
+        padding: 75px 20px;
+      }
+
+      .nav-container {
+        padding: 0 20px;
+      }
+
+      .hero-container {
+        padding: 120px 20px 70px;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+
+      .option-card {
+        min-height: 300px;
+      }
+
+      .story-image {
+        height: 240px;
+      }
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+
+  <!-- =========================
+       NAVIGATION
+  ========================= -->
+
+  <header class="navbar">
+
+    <div class="nav-container">
+
+      <a href="#inicio" class="logo">
+        Entre<span>Nosotras</span>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+
+          <li>
+            <a href="#inicio">Inicio</a>
+          </li>
+
+          <li>
+            <a href="#sobre">Sobre el proyecto</a>
+          </li>
+
+          <li>
+            <a href="#historias">Historias</a>
+          </li>
+
+          <li>
+            <a href="#comunidad">Comunidad</a>
+          </li>
+
+          <li>
+            <a href="#apoyo">Apoyo</a>
+          </li>
+
+        </ul>
+      </nav>
+
+      <div class="nav-social">
+
+        <a href="#" aria-label="Instagram">IG</a>
+        <a href="#" aria-label="Facebook">FB</a>
+
+      </div>
+
+      <button class="menu-button" aria-label="Abrir menú">
+        ☰
+      </button>
+
+    </div>
+
+  </header>
+
+
+  <!-- =========================
+       HERO
+  ========================= -->
+
+  <main>
+
+    <section class="hero" id="inicio">
+
+      <div class="hero-container">
+
+        <div class="hero-content">
+
+          <span class="eyebrow">
+            Un espacio para nosotras
+          </span>
+
+          <h1>
+            Migrar no significa hacerlo <span>sola.</span>
+          </h1>
+
+          <p>
+            Un espacio digital para mujeres migrantes internas:
+            para escuchar historias, conectar con otras mujeres
+            y encontrar orientación y apoyo.
+          </p>
+
+          <div class="hero-buttons">
+
+            <a href="#opciones" class="button button-primary">
+              Encuentra apoyo
+            </a>
+
+            <a href="#historias" class="button button-light">
+              Conoce sus historias
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         ABOUT
+    ========================= -->
+
+    <section class="about" id="sobre">
+
+      <div class="container about-grid">
+
+        <div class="about-image">
+
+          <img
+            src="https://images.unsplash.com/photo-1511988617509-a57c8a288659?auto=format&fit=crop&w=1200&q=85"
+            alt="Mujeres conversando"
+          >
+
+        </div>
+
+
+        <div class="about-text">
+
+          <div class="section-label">
+            Sobre este espacio
+          </div>
+
+          <h2 class="section-title">
+            Un lugar para sentirte acompañada.
+          </h2>
+
+          <p>
+            Migrar dentro de Colombia significa dejar atrás lugares,
+            personas y rutinas para comenzar un nuevo proceso en otro
+            territorio.
+          </p>
+
+          <p>
+            Esta plataforma busca acompañar a mujeres migrantes internas
+            a través de historias, conversaciones, información y
+            recursos que les permitan sentirse escuchadas y conectadas.
+          </p>
+
+          <div class="values">
+
+            <div class="value">
+              <strong>Escuchar</strong>
+              <span>Historias reales de otras mujeres.</span>
+            </div>
+
+            <div class="value">
+              <strong>Conectar</strong>
+              <span>Crear vínculos y redes de apoyo.</span>
+            </div>
+
+            <div class="value">
+              <strong>Acompañar</strong>
+              <span>Encontrar orientación y recursos.</span>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         THREE OPTIONS
+    ========================= -->
+
+    <section class="options" id="opciones">
+
+      <div class="container">
+
+        <div class="section-label">
+          Este espacio es para ti
+        </div>
+
+        <h2 class="section-title">
+          ¿Qué quieres encontrar hoy?
+        </h2>
+
+        <p class="section-intro">
+          Elige el espacio que más se acerque a lo que necesitas.
+        </p>
+
+
+        <div class="options-grid">
+
+
+          <!-- PODCAST -->
+
+          <article class="option-card podcast">
+
+            <div>
+
+              <div class="option-icon">
+                🎧
+              </div>
+
+              <h3>
+                Escuchar
+              </h3>
+
+              <p>
+                Conoce las historias de mujeres que también
+                han vivido procesos de migración interna.
+              </p>
+
+            </div>
+
+            <a href="#historias" class="option-link">
+              Escuchar historias →
+            </a>
+
+          </article>
+
+
+          <!-- FORUM -->
+
+          <article class="option-card forum">
+
+            <div>
+
+              <div class="option-icon">
+                💬
+              </div>
+
+              <h3>
+                Conectar
+              </h3>
+
+              <p>
+                Comparte experiencias, haz preguntas y conversa
+                con otras mujeres dentro de un espacio comunitario.
+              </p>
+
+            </div>
+
+            <a href="#comunidad" class="option-link">
+              Entrar a la comunidad →
+            </a>
+
+          </article>
+
+
+          <!-- SUPPORT -->
+
+          <article class="option-card support">
+
+            <div>
+
+              <div class="option-icon">
+                💜
+              </div>
+
+              <h3>
+                Encontrar apoyo
+              </h3>
+
+              <p>
+                Encuentra orientación y recursos relacionados con
+                bienestar emocional y acompañamiento social.
+              </p>
+
+            </div>
+
+            <a href="#apoyo" class="option-link">
+              Ver opciones de apoyo →
+            </a>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         STORIES
+    ========================= -->
+
+    <section class="stories" id="historias">
+
+      <div class="container">
+
+        <div class="stories-header">
+
+          <div>
+
+            <div class="section-label">
+              Voces que acompañan
+            </div>
+
+            <h2 class="section-title">
+              Ellas también migraron.
+            </h2>
+
+          </div>
+
+          <p class="section-intro">
+            Escucha experiencias de mujeres que han comenzado
+            una nueva etapa en otro territorio.
+          </p>
+
+        </div>
+
+
+        <div class="stories-grid">
+
+
+          <article class="story-card">
+
+            <div class="story-image">
+
+              <img
+                src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=900&q=85"
+                alt="Retrato de una mujer"
+              >
+
+            </div>
+
+            <div class="story-content">
+
+              <span class="story-meta">
+                Podcast · Episodio 01
+              </span>
+
+              <h3>
+                “Llegar a una ciudad donde no conocía a nadie.”
+              </h3>
+
+              <p>
+                Una conversación sobre comenzar de nuevo,
+                construir redes y encontrar nuevos lugares.
+              </p>
+
+              <a href="#" class="button button-outline">
+                ▶ Escuchar
+              </a>
+
+            </div>
+
+          </article>
+
+
+          <article class="story-card">
+
+            <div class="story-image">
+
+              <img
+                src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=900&q=85"
+                alt="Grupo de mujeres conversando"
+              >
+
+            </div>
+
+            <div class="story-content">
+
+              <span class="story-meta">
+                Podcast · Episodio 02
+              </span>
+
+              <h3>
+                “Encontrar a otras mujeres cambió mi experiencia.”
+              </h3>
+
+              <p>
+                Sobre comunidad, amistad y la importancia de
+                sentirse acompañada al llegar a un nuevo lugar.
+              </p>
+
+              <a href="#" class="button button-outline">
+                ▶ Escuchar
+              </a>
+
+            </div>
+
+          </article>
+
+
+          <article class="story-card">
+
+            <div class="story-image">
+
+              <img
+                src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=900&q=85"
+                alt="Retrato"
+              >
+
+            </div>
+
+            <div class="story-content">
+
+              <span class="story-meta">
+                Podcast · Episodio 03
+              </span>
+
+              <h3>
+                “Empezar de nuevo también puede ser una oportunidad.”
+              </h3>
+
+              <p>
+                Una historia sobre cambios, aprendizajes y
+                nuevas posibilidades.
+              </p>
+
+              <a href="#" class="button button-outline">
+                ▶ Escuchar
+              </a>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         COMMUNITY / FORUM
+    ========================= -->
+
+    <section class="community" id="comunidad">
+
+      <div class="container community-grid">
+
+
+        <div>
+
+          <div class="section-label">
+            Comunidad
+          </div>
+
+          <h2 class="section-title">
+            Hablar también es una forma de acompañarnos.
+          </h2>
+
+          <p class="section-intro">
+            Un espacio para compartir experiencias, hacer preguntas
+            y conversar con otras mujeres que atraviesan procesos
+            similares.
+          </p>
+
+          <br>
+
+          <a href="#" class="button button-primary">
+            Entrar al foro
+          </a>
+
+        </div>
+
+
+        <div class="forum-preview">
+
+          <div class="forum-header">
+
+            <strong>
+              Conversaciones
+            </strong>
+
+            <span class="online">
+              ● Comunidad activa
+            </span>
+
+          </div>
+
+
+          <div class="forum-post">
+
+            <h4>
+              ¿Cómo hicieron para encontrar trabajo al llegar?
+            </h4>
+
+            <span>
+              14 respuestas · Hace 2 horas
+            </span>
+
+          </div>
+
+
+          <div class="forum-post">
+
+            <h4>
+              ¿Alguien conoce organizaciones que apoyen a mujeres?
+            </h4>
+
+            <span>
+              8 respuestas · Hace 35 minutos
+            </span>
+
+          </div>
+
+
+          <div class="forum-post">
+
+            <h4>
+              Me mudé hace poco y me siento sola.
+            </h4>
+
+            <span>
+              21 respuestas · Hace 10 minutos
+            </span>
+
+          </div>
+
+
+          <div class="forum-post">
+
+            <h4>
+              Consejos para adaptarme a mi nueva ciudad
+            </h4>
+
+            <span>
+              6 respuestas · Hace 5 minutos
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         SUPPORT
+    ========================= -->
+
+    <section class="support-section" id="apoyo">
+
+      <div class="container support-grid">
+
+
+        <div>
+
+          <div class="section-label">
+            Bienestar y orientación
+          </div>
+
+          <h2 class="section-title">
+            Pedir apoyo también es avanzar.
+          </h2>
+
+          <p class="section-intro">
+            Encuentra información y recursos que pueden orientarte
+            cuando estés atravesando un momento difícil.
+          </p>
+
+          <br>
+
+          <a href="#" class="button button-primary">
+            Encontrar apoyo
+          </a>
+
+        </div>
+
+
+        <div class="support-box">
+
+
+          <div class="support-item">
+
+            <div class="support-number">
+              01
+            </div>
+
+            <div>
+
+              <strong>
+                Bienestar emocional
+              </strong>
+
+              <span>
+                Información y recursos para cuidar tu salud emocional.
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <div class="support-item">
+
+            <div class="support-number">
+              02
+            </div>
+
+            <div>
+
+              <strong>
+                Orientación social
+              </strong>
+
+              <span>
+                Encuentra rutas y servicios de acompañamiento.
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <div class="support-item">
+
+            <div class="support-number">
+              03
+            </div>
+
+            <div>
+
+              <strong>
+                Recursos y organizaciones
+              </strong>
+
+              <span>
+                Conoce entidades y espacios que pueden ayudarte.
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <div class="support-item">
+
+            <div class="support-number">
+              04
+            </div>
+
+            <div>
+
+              <strong>
+                ¿Dónde acudir?
+              </strong>
+
+              <span>
+                Encuentra información sobre rutas institucionales.
+              </span>
+
+            </div>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         THESIS
+    ========================= -->
+
+    <section class="thesis">
+
+      <div class="container thesis-grid">
+
+
+        <div>
+
+          <div class="section-label">
+            Proyecto de tesis
+          </div>
+
+          <h2 class="section-title">
+            Diseñar para acompañar.
+          </h2>
+
+          <p class="section-intro">
+            Este espacio nace como parte de un proyecto académico
+            que explora cómo el diseño digital puede contribuir
+            al acompañamiento de mujeres migrantes internas.
+          </p>
+
+          <div class="institution">
+
+            <strong>
+              En articulación con:
+            </strong>
+
+            <br>
+
+            Alta Consejería de Paz, Víctimas y Reconciliación
+
+          </div>
+
+        </div>
+
+
+        <div class="objectives">
+
+
+          <div class="objective">
+
+            <div class="objective-number">
+              01
+            </div>
+
+            <div>
+
+              <h3>
+                Reconocer
+              </h3>
+
+              <p>
+                Identificar las necesidades sociales relacionadas
+                con la migración interna de las mujeres.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="objective">
+
+            <div class="objective-number">
+              02
+            </div>
+
+            <div>
+
+              <h3>
+                Analizar
+              </h3>
+
+              <p>
+                Estudiar referentes de páginas web y plataformas
+                relacionadas con gestión social y migración.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="objective">
+
+            <div class="objective-number">
+              03
+            </div>
+
+            <div>
+
+              <h3>
+                Testear
+              </h3>
+
+              <p>
+                Validar el prototipo con mujeres migrantes internas
+                para conocer sus experiencias y necesidades.
+              </p>
+
+            </div>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         FINAL CTA
+    ========================= -->
+
+    <section class="final-cta">
+
+      <div class="container">
+
+        <div class="section-label">
+          Entre nosotras
+        </div>
+
+        <h2>
+          Tu historia importa. Tu voz también.
+        </h2>
+
+        <p>
+          Un nuevo lugar puede sentirse diferente cuando
+          encuentras personas con quienes compartir el camino.
+        </p>
+
+        <a href="#opciones" class="button button-primary">
+          Explorar el espacio
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================
+       FOOTER
+  ========================= -->
+
+  <footer>
+
+    <div class="footer-grid">
+
+
+      <div>
+
+        <div class="footer-logo">
+          EntreNosotras
+        </div>
+
+        <p class="footer-description">
+          Espacio digital de acompañamiento y conexión
+          para mujeres migrantes internas.
+        </p>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h4>
+          Explora
+        </h4>
+
+        <a href="#inicio">Inicio</a>
+        <a href="#historias">Historias</a>
+        <a href="#comunidad">Comunidad</a>
+        <a href="#apoyo">Apoyo</a>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h4>
+          Síguenos
+        </h4>
+
+        <a href="#">Instagram</a>
+        <a href="#">Facebook</a>
+        <a href="#">Contacto</a>
+
+      </div>
+
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+      <p>
+        © 2026 EntreNosotras · Prototipo académico de alta fidelidad.
+      </p>
+
+    </div>
+
+  </footer>
+
+
+</body>
+</html>
