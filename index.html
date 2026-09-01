@@ -148,12 +148,35 @@
     }
 
     .nav-social {
-      display: flex;
-      gap: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
 
-      font-size: 0.8rem;
-      font-weight: 600;
-    }
+.nav-social a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 32px;
+  height: 32px;
+
+  color: var(--green-dark);
+
+  transition: 0.3s;
+}
+
+.nav-social svg {
+  width: 20px;
+  height: 20px;
+
+  fill: currentColor;
+}
+
+.nav-social a:hover {
+  color: var(--orange);
+  transform: translateY(-2px);
+}
 
     .menu-button {
       display: none;
@@ -1036,7 +1059,7 @@
     <div class="nav-container">
 
       <a href="#inicio" class="logo">
-        Entre<span>Nosotras</span>
+        Kit de<span>Herramientas</span>
       </a>
 
       <nav>
@@ -1067,10 +1090,20 @@
 
       <div class="nav-social">
 
-        <a href="#" aria-label="Instagram">IG</a>
-        <a href="#" aria-label="Facebook">FB</a>
+  <a href="#" aria-label="Instagram">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5A4.5 4.5 0 1 1 12 16.5 4.5 4.5 0 0 1 12 7.5zm0 2A2.5 2.5 0 1 0 12 14.5 2.5 2.5 0 0 0 12 9.5zM17.5 6.5a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+    </svg>
+  </a>
 
-      </div>
+  <a href="#" aria-label="Facebook">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M13.5 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.6 1.7-1.6h1.8V3.8c-.3 0-1.4-.1-2.6-.1-2.6 0-4.3 1.6-4.3 4.4V10H7.3v3h2.8v8h3.4z"/>
+    </svg>
+  </a>
+
+</div>
+
 
       <button class="menu-button" aria-label="Abrir menú">
         ☰
