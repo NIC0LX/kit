@@ -91,16 +91,19 @@
     }
 
     .logo {
-      font-family: var(--serif);
-      font-size: 1.55rem;
-      font-weight: 700;
-      color: var(--violet-dark);
-      cursor: pointer;
-    }
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  line-height: 1;
+}
 
-    .logo span {
-      color: var(--lila);
-    }
+.logo img {
+  display: block;
+  width: 180px;
+  height: auto;
+  max-height: 60px;
+  object-fit: contain;
+}
 
     .nav-links {
       display: flex;
@@ -796,9 +799,11 @@
   ========================= -->
   <header class="navbar">
     <div class="nav-container">
-      <a class="logo" onclick="switchView('home')">
-        Kit de<span>Herramientas</span>
-      </a>
+      <a class="logo" onclick="switchView('home')" aria-label="Casa Nómada - Inicio">
+  <img src="./LOGO_COLOR-05.png"
+       alt="Logo de Casa Nómada"
+       style="width: 180px; height: auto; max-height: 60px; object-fit: contain;">
+</a>
 
       <nav>
         <ul class="nav-links">
@@ -1063,10 +1068,24 @@
 
       <div class="guides-grid">
         <div class="guide-card">
-          <h3>Guía 01: Bienestar Emocional</h3>
-          <p>Herramientas prácticas para gestionar el estrés del cambio de ciudad, la ansiedad y el duelo migratorio en solitario.</p>
-          <button class="button button-primary" onclick="alert('Descargando Guía 01 en PDF...')">Descargar Guía (PDF)</button>
-        </div>
+          <div class="guide-card">
+  <h3>Guía 01: Mi diario de experiencias</h3>
+  <p>Un espacio personal para escribir tus experiencias, expresar tus emociones y reflexionar sobre tu proceso de migración.</p>
+
+  <a href="./actividad1-1.pdf"
+     target="_blank"
+     rel="noopener noreferrer"
+     class="button button-primary">
+    Abrir guía (PDF) ↗
+  </a>
+
+  <a href="./actividad1-1.pdf"
+     download="actividad1-1.pdf"
+     class="button button-outline"
+     style="margin-top: 10px;">
+    Descargar guía
+  </a>
+</div>
 
         <div class="guide-card">
           <h3>Guía 02: Orientación Social en Bogotá</h3>
