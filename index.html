@@ -1316,31 +1316,6 @@ async function cargarPublicaciones() {
 document.addEventListener('DOMContentLoaded', () => {
     cargarPublicaciones();
 });
-
-      const feed = document.getElementById('posts-feed');
-      const nuevoPost = document.createElement('div');
-      nuevoPost.className = 'post-item';
-      const autor = document.createElement('div');
-autor.className = 'post-author';
-autor.textContent = usuarioActual;
-
-const encabezado = document.createElement('h4');
-encabezado.textContent = titulo;
-
-const mensaje = document.createElement('p');
-mensaje.textContent = contenido;
-
-nuevoPost.appendChild(autor);
-nuevoPost.appendChild(encabezado);
-nuevoPost.appendChild(mensaje);
-
-      feed.prepend(nuevoPost);
-
-      // Limpiar campos
-      document.getElementById('post-title').value = "";
-      document.getElementById('post-content').value = "";
-      alert("¡Tu mensaje se ha publicado de forma segura en la comunidad!");
-    }
   </script>
 </body>
 </html>
