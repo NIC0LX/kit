@@ -143,7 +143,36 @@
       font-size: 1.6rem;
       cursor: pointer;
     }
+/* MENÚ DESPLEGABLE PARA CELULARES */
+@media (max-width: 900px) {
+  .nav-links.show {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 78px;
+    left: 0;
+    width: 100%;
+    padding: 25px;
+    background: var(--cream);
+    gap: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+    align-items: stretch;
+  }
 
+  .nav-links.show li {
+    width: 100%;
+  }
+
+  .nav-links.show a {
+    display: block;
+    padding: 8px;
+  }
+
+  .menu-button {
+    display: block;
+    color: var(--violet-dark);
+  }
+}
     /* =========================
         VISTAS (SPA Interno)
     ========================= */
@@ -1312,7 +1341,21 @@ async function cargarPublicaciones() {
 
     });
 }
-// Cargar publicaciones al abrir la página
+// MENÚ PARA CELULARES
+const menuButton = document.querySelector('.menu-button');
+const navLinks = document.querySelector('.nav-links');
+
+menuButton.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
+});
+
+// Cerrar menú al seleccionar una opción
+navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+        navLinks.classList.remove('show');
+    });
+});
+    // Cargar publicaciones al abrir la página
 document.addEventListener('DOMContentLoaded', () => {
     cargarPublicaciones();
 });
