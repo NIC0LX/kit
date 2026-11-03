@@ -1038,6 +1038,8 @@
         <div class="forum-list-box">
           <h3>Conversaciones Activas</h3>
           <div class="forum-posts-feed" id="posts-feed">
+    <p>Cargando conversaciones...</p>
+</div>
             <div class="post-item">
               <div class="post-author">Ana_Medellin</div>
               <h4>¿Cómo hicieron para encontrar trabajo al llegar?</h4>
@@ -1158,7 +1160,20 @@
   <!-- =========================
        JAVASCRIPT (Control de Vistas y Foro)
   ========================= -->
+ <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script>
+    // ========================================
+// CONEXIÓN CON SUPABASE
+// ========================================
+
+const SUPABASE_URL = "PEGA_AQUI_TU_PROJECT_URL";
+
+const SUPABASE_KEY = "PEGA_AQUI_TU_PUBLISHABLE_KEY";
+
+const supabaseClient = window.supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_KEY
+);
     // Función para cambiar de vista sin salir de la página
     function switchView(viewId) {
       const views = document.querySelectorAll('.view-section');
@@ -1166,9 +1181,13 @@
 
       const targetView = document.getElementById('view-' + viewId);
       if (targetView) {
-        targetView.classList.add('active');
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      }
+    targetView.classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    if (viewId === 'forum') {
+        cargarPublicaciones();
+    }
+}
     }
 
     // Lógica de usuario seguro para el Foro
@@ -1196,14 +1215,107 @@
       document.getElementById('post-container').style.display = 'none';
     }
 
-    function publicarMensaje() {
-      const titulo = document.getElementById('post-title').value.trim();
-      const contenido = document.getElementById('post-content').value.trim();
+   
+async function publicarMensaje() {
 
-      if (titulo === "" || contenido === "") {
-        alert("Por favor completa tanto el título como el contenido del mensaje.");
+    const titulo = document.getElementById('post-title').value.trim();
+    const contenido = document.getElementById('post-content').value.trim();
+
+    if (!usuarioActual) {
+        alert("Primero debes ingresar al foro.");
         return;
-      }
+    }
+
+    if (titulo === "" || contenido === "") {
+        alert("Completa el título y el mensaje.");
+        return;
+    }
+
+    const boton = document.querySelector('#post-container .button-primary');
+    boton.disabled = true;
+    boton.textContent = "Publicando...";
+
+    // GUARDAR EN SUPABASE
+    const { error } = await supabaseClient
+        .from('publicaciones')
+        .insert([
+            {
+                usuario: usuarioActual,
+                titulo: titulo,
+                contenido: contenido
+            }
+        ]);
+
+    boton.disabled = false;
+    boton.textContent = "Publicar en el Foro";
+
+    if (error) {
+        console.error("Error al publicar:", error);
+        alert("No fue posible publicar. Intenta nuevamente.");
+        return;
+    }
+
+    // Limpiar campos
+    document.getElementById('post-title').value = "";
+    document.getElementById('post-content').value = "";
+
+    alert("¡Tu publicación se guardó correctamente!");
+
+    // Actualizar el foro
+    await cargarPublicaciones();
+}
+
+async function cargarPublicaciones() {
+
+    const feed = document.getElementById('posts-feed');
+
+    feed.textContent = "Cargando conversaciones...";
+
+    const { data, error } = await supabaseClient
+        .from('publicaciones')
+        .select('*')
+        .order('created_at', { ascending: false });
+
+    if (error) {
+        console.error("Error al cargar:", error);
+        feed.textContent = "No fue posible cargar las conversaciones.";
+        return;
+    }
+
+    feed.replaceChildren();
+
+    if (data.length === 0) {
+        feed.textContent = "Todavía no hay publicaciones. ¡Anímate a iniciar una conversación!";
+        return;
+    }
+
+    data.forEach(post => {
+
+        const nuevoPost = document.createElement('div');
+        nuevoPost.className = 'post-item';
+
+        const autor = document.createElement('div');
+        autor.className = 'post-author';
+        autor.textContent = post.usuario;
+
+        const encabezado = document.createElement('h4');
+        encabezado.textContent = post.titulo;
+
+        const mensaje = document.createElement('p');
+        mensaje.textContent = post.contenido;
+
+        nuevoPost.appendChild(autor);
+        nuevoPost.appendChild(encabezado);
+        nuevoPost.appendChild(mensaje);
+
+        feed.appendChild(nuevoPost);
+
+    });
+}
+// Cargar publicaciones al abrir la página
+document.addEventListener('DOMContentLoaded', () => {
+    cargarPublicaciones();
+});
 
       const feed = document.getElementById('posts-feed');
       const nuevoPost = document.createElement('div');
