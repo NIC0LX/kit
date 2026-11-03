@@ -1027,7 +1027,9 @@
             <span class="story-meta">Podcast · Episodio 02</span>
             <h3>“Encontrar a otras mujeres cambió mi experiencia.”</h3>
             <p>Sobre comunidad, amistad y la importancia vital de sentirse acompañada al llegar a un entorno urbano grande.</p>
-            <button class="button button-outline" onclick="alert('Reproduciendo audio del Episodio 02...')">▶ Escuchar episodio</button>
+           <audio controls preload="metadata" style="width: 100%;">
+  <source src="./Podcast_2.mp3" type="audio/mpeg">
+</audio>
           </div>
         </article>
 
@@ -1039,7 +1041,9 @@
             <span class="story-meta">Podcast · Episodio 03</span>
             <h3>“Empezar de nuevo también puede ser una oportunidad.”</h3>
             <p>Una historia inspiradora sobre cambios de vida, superación de retos y nuevas posibilidades laborales.</p>
-            <button class="button button-outline" onclick="alert('Reproduciendo audio del Episodio 03...')">▶ Escuchar episodio</button>
+            <audio controls preload="metadata" style="width: 100%;">
+  <source src="./Podcast_3.mp3" type="audio/mpeg">
+</audio>
           </div>
         </article>
       </div>
@@ -1145,15 +1149,6 @@
       Descargar guía
     </a>
   </div>
-  <h3>Guía 01: Mi diario de experiencias</h3>
-  <p>Un espacio personal para escribir tus experiencias, expresar tus emociones y reflexionar sobre tu proceso de migración.</p>
-
-  <a href="./actividad1-1.pdf"
-     target="_blank"
-     rel="noopener noreferrer"
-     class="button button-primary">
-    Abrir guía (PDF) ↗
-  </a>
 
   <a href="./actividad1-1.pdf"
      download="actividad1-1.pdf"
@@ -1227,11 +1222,6 @@
 const SUPABASE_URL = "https://jctlrvwtbqcfdwrogups.supabase.co";
 
 const SUPABASE_KEY = "sb_publishable_DZCUCodvCBUNs5rXYqMJ7Q_mfO1t3jg";
-
-const supabaseClient = window.supabase.createClient(
-    SUPABASE_URL,
-    SUPABASE_KEY
-);
 
 const supabaseClient = window.supabase.createClient(
     SUPABASE_URL,
