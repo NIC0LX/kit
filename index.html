@@ -1223,9 +1223,16 @@
 // CONEXIÓN CON SUPABASE
 // ========================================
 
-const SUPABASE_URL = "PEGA_AQUI_TU_PROJECT_URL";
+// CONEXIÓN CON SUPABASE
 
-const SUPABASE_KEY = "PEGA_AQUI_TU_PUBLISHABLE_KEY";
+const SUPABASE_URL = "https://jctlrvwtbqcfdwrogups.supabase.co";
+
+const SUPABASE_KEY = "sb_publishable_DZCUCodvCBUNs5rXYqMJ7Q_mfO1t3jg";
+
+const supabaseClient = window.supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_KEY
+);
 
 const supabaseClient = window.supabase.createClient(
     SUPABASE_URL,
