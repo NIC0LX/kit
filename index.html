@@ -143,36 +143,64 @@
       font-size: 1.6rem;
       cursor: pointer;
     }
-/* MENÚ DESPLEGABLE PARA CELULARES */
+
+/* MENÚ RESPONSIVE PARA CELULARES */
+
+.menu-button {
+  display: none;
+  border: none;
+  background: transparent;
+  font-size: 30px;
+  cursor: pointer;
+  color: var(--violet-dark);
+  padding: 8px;
+  z-index: 1002;
+}
+
 @media (max-width: 900px) {
-  .nav-links.show {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 78px;
-    left: 0;
-    width: 100%;
-    padding: 25px;
-    background: var(--cream);
-    gap: 20px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
-    align-items: stretch;
-  }
 
-  .nav-links.show li {
-    width: 100%;
-  }
-
-  .nav-links.show a {
-    display: block;
-    padding: 8px;
+  .nav-container {
+    height: 78px;
   }
 
   .menu-button {
     display: block;
-    color: var(--violet-dark);
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 78px;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 15px;
+    padding: 25px;
+    background: var(--cream);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+    z-index: 1001;
+  }
+
+  .nav-links.show {
+    display: flex !important;
+  }
+
+  .nav-links li {
+    width: 100%;
+  }
+
+  .nav-links a {
+    display: block;
+    width: 100%;
+    padding: 10px;
+  }
+
+  .nav-links .whatsapp-btn-nav {
+    justify-content: center;
   }
 }
+
     /* =========================
         VISTAS (SPA Interno)
     ========================= */
@@ -1341,20 +1369,47 @@ async function cargarPublicaciones() {
 
     });
 }
-// MENÚ PARA CELULARES
+ 
+// MENÚ RESPONSIVE PARA CELULARES
+
 const menuButton = document.querySelector('.menu-button');
 const navLinks = document.querySelector('.nav-links');
 
-menuButton.addEventListener('click', () => {
+menuButton.addEventListener('click', function() {
+
     navLinks.classList.toggle('show');
+
+    const menuAbierto = navLinks.classList.contains('show');
+
+    menuButton.textContent = menuAbierto ? '✕' : '☰';
+
+    menuButton.setAttribute(
+        'aria-expanded',
+        menuAbierto
+    );
+
+    menuButton.setAttribute(
+        'aria-label',
+        menuAbierto ? 'Cerrar menú' : 'Abrir menú'
+    );
 });
 
 // Cerrar menú al seleccionar una opción
+
 navLinks.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
+
+    link.addEventListener('click', function() {
+
         navLinks.classList.remove('show');
+
+        menuButton.textContent = '☰';
+
+        menuButton.setAttribute('aria-expanded', 'false');
+
     });
+
 });
+
     // Cargar publicaciones al abrir la página
 document.addEventListener('DOMContentLoaded', () => {
     cargarPublicaciones();
