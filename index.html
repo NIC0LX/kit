@@ -99,9 +99,9 @@
 
 .logo img {
   display: block;
-  width: 360px;
+  width: 180px;
   height: auto;
-  max-height: 175px;
+  max-height: 60px;
   object-fit: contain;
 }
 
@@ -1067,8 +1067,25 @@
       <p class="section-intro">Encuentra información institucional y herramientas diseñadas para orientarte paso a paso.</p>
 
       <div class="guides-grid">
-        <div class="guide-card">
-          <div class="guide-card">
+
+  <div class="guide-card">
+    <h3>Guía 01: Mi diario de experiencias</h3>
+    <p>Un espacio personal para escribir tus experiencias, expresar tus emociones y reflexionar sobre tu proceso de migración.</p>
+
+    <a href="./actividad1-1.pdf"
+       target="_blank"
+       rel="noopener noreferrer"
+       class="button button-primary">
+      Abrir guía (PDF) ↗
+    </a>
+
+    <a href="./actividad1-1.pdf"
+       download="actividad1-1.pdf"
+       class="button button-outline"
+       style="margin-top: 10px;">
+      Descargar guía
+    </a>
+  </div>
   <h3>Guía 01: Mi diario de experiencias</h3>
   <p>Un espacio personal para escribir tus experiencias, expresar tus emociones y reflexionar sobre tu proceso de migración.</p>
 
@@ -1191,11 +1208,19 @@
       const feed = document.getElementById('posts-feed');
       const nuevoPost = document.createElement('div');
       nuevoPost.className = 'post-item';
-      nuevoPost.innerHTML = `
-        <div class="post-author">${usuarioActual}</div>
-        <h4>${titulo}</h4>
-        <p>${contenido}</p>
-      `;
+      const autor = document.createElement('div');
+autor.className = 'post-author';
+autor.textContent = usuarioActual;
+
+const encabezado = document.createElement('h4');
+encabezado.textContent = titulo;
+
+const mensaje = document.createElement('p');
+mensaje.textContent = contenido;
+
+nuevoPost.appendChild(autor);
+nuevoPost.appendChild(encabezado);
+nuevoPost.appendChild(mensaje);
 
       feed.prepend(nuevoPost);
 
