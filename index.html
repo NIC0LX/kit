@@ -268,14 +268,15 @@
 
         <!-- COLUMNA DERECHA: LISTA DE PUBLICACIONES DEL FORO -->
         <div class="forum-list-box">
-          <h3>Conversaciones Activas</h3>
-         <div class="forum-posts-feed" id="posts-feed">
+  <h3>Conversaciones Activas</h3>
+
+  <div class="forum-posts-feed" id="posts-feed">
     <p>Cargando conversaciones...</p>
-</div>
-                  </div>
-      </div>
-    </div>
   </div>
+</div>
+</div>
+</div>
+</div>
 
   <!-- =========================================
        VISTA 4: APOYO Y GUÍAS (Sección Aparte)
@@ -381,10 +382,20 @@ const SUPABASE_URL = "https://jctlrvwtbqcfdwrogups.supabase.co";
 <!-- CONEXIÓN CON SUPABASE -->
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
-<!-- ARCHIVO PRINCIPAL -->
-<script src="./js/main.js"></script>
+<!-- CONFIGURACIÓN DE SUPABASE -->
+<script>
+const SUPABASE_URL = "https://jctlrvwtbqcfdwrogups.supabase.co";
 
-<!-- ARCHIVO DEL FORO -->
+const SUPABASE_KEY = "TU_CLAVE_PUBLICABLE_DE_SUPABASE";
+
+const supabaseClient = window.supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_KEY
+);
+</script>
+
+<!-- ARCHIVOS JAVASCRIPT -->
+<script src="./js/main.js"></script>
 <script src="./js/foro.js"></script>
 
 </body>
