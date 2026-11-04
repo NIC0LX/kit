@@ -272,6 +272,10 @@
          <div class="forum-posts-feed" id="posts-feed">
     <p>Cargando conversaciones...</p>
 </div>
+                  </div>
+      </div>
+    </div>
+  </div>
 
   <!-- =========================================
        VISTA 4: APOYO Y GUÍAS (Sección Aparte)
@@ -374,14 +378,17 @@
 <script>
 const SUPABASE_URL = "https://jctlrvwtbqcfdwrogups.supabase.co";
 
-const SUPABASE_KEY = "TU_CLAVE_PUBLICABLE_DE_SUPABASE";
+<!-- CONEXIÓN CON SUPABASE -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
-const supabaseClient = window.supabase.createClient(
-    SUPABASE_URL,
-    SUPABASE_KEY
-);
-</script>
+<!-- ARCHIVO PRINCIPAL -->
+<script src="./js/main.js"></script>
 
+<!-- ARCHIVO DEL FORO -->
+<script src="./js/foro.js"></script>
+
+</body>
+</html>
 <!-- 3. ARCHIVO PRINCIPAL -->
 <script src="./js/main.js"></script>
 
