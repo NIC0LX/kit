@@ -269,24 +269,9 @@
         <!-- COLUMNA DERECHA: LISTA DE PUBLICACIONES DEL FORO -->
         <div class="forum-list-box">
           <h3>Conversaciones Activas</h3>
-          <div class="forum-posts-feed" id="posts-feed">
+         <div class="forum-posts-feed" id="posts-feed">
     <p>Cargando conversaciones...</p>
 </div>
-            <div class="post-item">
-              <div class="post-author">Ana_Medellin</div>
-              <h4>¿Cómo hicieron para encontrar trabajo al llegar?</h4>
-              <p>Hola a todas, me mudé hace un mes y estoy buscando opciones laborales flexibles...</p>
-            </div>
-            <div class="post-item">
-              <div class="post-author">Carmen_Cali</div>
-              <h4>¿Alguien conoce organizaciones que apoyen a mujeres?</h4>
-              <p>Busco fundaciones o entidades públicas que orienten en temas de vivienda temporal.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 
   <!-- =========================================
        VISTA 4: APOYO Y GUÍAS (Sección Aparte)
@@ -377,17 +362,35 @@
        JAVASCRIPT (Control de Vistas y Foro)
   ========================= -->
 
-<!-- CONEXIÓN CON SUPABASE -->
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<!-- 1. CONEXIÓN CON SUPABASE -->
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
-<!-- ARCHIVO PRINCIPAL -->
+<!-- 2. CONFIGURACIÓN DE SUPABASE -->
+<script>
+const SUPABASE_URL = "https://jctlrvwtbqcfdwrogups.supabase.co";
+
+const SUPABASE_KEY = "TU_CLAVE_PUBLICABLE_DE_SUPABASE";
+
+const supabaseClient = window.supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_KEY
+);
+</script>
+
+<!-- 3. ARCHIVO PRINCIPAL -->
 <script src="./js/main.js"></script>
 
-<!-- ARCHIVO DEL FORO -->
+<!-- 4. ARCHIVO DEL FORO -->
 <script src="./js/foro.js"></script>
 
 </body>
 </html>
+
 
 // ========================================
 
