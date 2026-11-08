@@ -6,23 +6,49 @@
 
 function switchView(viewId) {
 
+    // Ocultar todas las vistas
     const views = document.querySelectorAll('.view-section');
 
-    views.forEach(v => v.classList.remove('active'));
+    views.forEach(view => {
+        view.classList.remove('active');
+    });
 
+    // Mostrar la vista seleccionada
     const targetView = document.getElementById('view-' + viewId);
 
     if (targetView) {
+
         targetView.classList.add('active');
 
+        // Subir al inicio
         window.scrollTo({
             top: 0,
             behavior: 'smooth'
         });
 
-        if (viewId === 'forum') {
+        // Cargar publicaciones del foro
+        if (viewId === 'forum' &&
+            typeof cargarPublicaciones === 'function') {
+
             cargarPublicaciones();
         }
+
+    } else {
+        console.error('No se encontró la vista: view-' + viewId);
+    }
+
+    // Cerrar menú móvil al cambiar de sección
+    const navLinks = document.querySelector('.nav-links');
+    const menuButton = document.querySelector('.menu-button');
+
+    if (navLinks) {
+        navLinks.classList.remove('show');
+    }
+
+    if (menuButton) {
+        menuButton.textContent = '☰';
+        menuButton.setAttribute('aria-expanded', 'false');
+        menuButton.setAttribute('aria-label', 'Abrir menú');
     }
 }
 
@@ -31,48 +57,34 @@ function switchView(viewId) {
 // MENÚ RESPONSIVE PARA CELULARES
 // ========================================
 
-const menuButton = document.querySelector('.menu-button');
-const navLinks = document.querySelector('.nav-links');
+document.addEventListener('DOMContentLoaded', function() {
 
-if (menuButton && navLinks) {
+    const menuButton = document.querySelector('.menu-button');
+    const navLinks = document.querySelector('.nav-links');
 
-    menuButton.addEventListener('click', function() {
+    if (menuButton && navLinks) {
 
-        navLinks.classList.toggle('show');
+        menuButton.addEventListener('click', function() {
 
-        const menuAbierto = navLinks.classList.contains('show');
+            navLinks.classList.toggle('show');
 
-        menuButton.textContent = menuAbierto ? '✕' : '☰';
+            const menuAbierto = navLinks.classList.contains('show');
 
-        menuButton.setAttribute(
-            'aria-expanded',
-            menuAbierto
-        );
+            menuButton.textContent = menuAbierto ? '✕' : '☰';
 
-        menuButton.setAttribute(
-            'aria-label',
-            menuAbierto ? 'Cerrar menú' : 'Abrir menú'
-        );
-    });
+            menuButton.setAttribute(
+                'aria-expanded',
+                menuAbierto ? 'true' : 'false'
+            );
 
-
-    // CERRAR MENÚ AL SELECCIONAR UNA OPCIÓN
-
-    navLinks.querySelectorAll('a').forEach(link => {
-
-        link.addEventListener('click', function() {
-
-            navLinks.classList.remove('show');
-
-            menuButton.textContent = '☰';
-
-            menuButton.setAttribute('aria-expanded', 'false');
-
-            menuButton.setAttribute('aria-label', 'Abrir menú');
+            menuButton.setAttribute(
+                'aria-label',
+                menuAbierto ? 'Cerrar menú' : 'Abrir menú'
+            );
 
         });
 
-    });
+    }
 
-}
+});
 
