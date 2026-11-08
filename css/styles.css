@@ -234,6 +234,55 @@
     }
 
  
+/* =========================================
+  FONDO CASA NÓMADA
+========================================= */
+
+.hero {
+  position: relative;
+  min-height: 90vh;
+  width: 100%;
+
+  /* IMAGEN DE FONDO */
+  background-image:
+    linear-gradient(
+      rgba(59, 29, 92, 0.68),
+      rgba(59, 29, 92, 0.68)
+    ),
+    url("../imagenes/mujeresvertical.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+
+.hero-container {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  max-width: 1200px;
+
+  margin: 0 auto;
+  padding: 140px 25px 90px;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: rgba(92, 43, 140, 0.18);
+
+  z-index: 1;
+  pointer-events: none;
+}
+
 /* =========================
    HERO - TEXTOS Y TIPOGRAFÍA
 ========================= */
