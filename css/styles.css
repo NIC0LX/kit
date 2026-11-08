@@ -1,4 +1,7 @@
- /* =========================
+{
+  -webkit-tap-highlight-color: transparent;
+}
+/* =========================
         VARIABLES
     ========================= */
     :root {
@@ -90,6 +93,24 @@
   height: auto;
   max-height: 60px;
   object-fit: contain;
+}
+.logo,
+.logo img,
+.menu-button,
+.nav-links a {
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+  -webkit-touch-callout: none;
+}
+
+.logo:focus,
+.logo:active,
+.menu-button:focus,
+.menu-button:active,
+.nav-links a:focus,
+.nav-links a:active {
+  outline: none;
+  box-shadow: none;
 }
 
     .nav-links {
