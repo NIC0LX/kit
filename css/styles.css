@@ -21,8 +21,8 @@
       --border: #dedfda;
 
       --max-width: 1200px;
-      --serif: "Playfair Display", Georgia, serif;
-      --sans: "DM Sans", Arial, sans-serif;
+      --serif: "Cherry Bomb One", cursive;
+      --sans: "Belanosima", sans-serif;
     }
 
     * {
@@ -302,6 +302,38 @@
 
   z-index: 1;
   pointer-events: none;
+}
+
+/* =========================================
+   IDENTIDAD TIPOGRÁFICA CASA NÓMADA
+========================================= */
+
+/* TEXTOS GENERALES */
+body,
+p,
+a,
+button,
+input,
+textarea,
+label,
+span,
+li,
+strong,
+small {
+    font-family: "Belanosima", sans-serif;
+}
+
+/* TÍTULOS Y SUBTÍTULOS */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.section-title,
+.footer-logo {
+    font-family: "Cherry Bomb One", cursive;
+    font-weight: 400;
 }
 
 /* =========================
