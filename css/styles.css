@@ -1130,3 +1130,16 @@
   }
 
 }
+@media (max-width: 600px) {
+
+  .activities-view > .container {
+    padding-left: 22px;
+    padding-right: 22px;
+  }
+
+  .activities-view .section-intro {
+    line-height: 1.7;
+    margin-bottom: 25px;
+  }
+
+}
