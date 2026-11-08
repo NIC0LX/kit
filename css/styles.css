@@ -233,10 +233,10 @@
       color: white;
     }
 
-    /* =========================
-        HERO
-    ========================= */
-  .hero {
+  /* =========================
+    HERO
+========================= */
+.hero {
   min-height: 100vh;
   position: relative;
   display: flex;
@@ -251,56 +251,13 @@
   background-position: center;
   background-repeat: no-repeat;
 }
-    
 
-    .hero-container {
-      max-width: var(--max-width);
-      width: 100%;
-      margin: auto;
-      padding: 130px 25px 80px;
-    }
-
-    .hero-content {
-      max-width: 720px;
-      color: white;
-    }
-
-    .eyebrow {
-      display: inline-block;
-      margin-bottom: 20px;
-      padding: 8px 15px;
-      border-radius: 100px;
-      background: var(--lila);
-      font-size: 0.75rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-    }
-
-    .hero h1 {
-      font-family: var(--serif);
-      font-size: clamp(3.2rem, 7vw, 6.5rem);
-      line-height: 0.98;
-      margin-bottom: 28px;
-    }
-
-    .hero h1 span {
-      color: #e2cbfd;
-    }
-
-    .hero p {
-      max-width: 600px;
-      font-size: 1.15rem;
-      margin-bottom: 35px;
-      color: rgba(255,255,255,0.92);
-    }
-
-    .hero-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-    }
-
+.hero-container {
+  max-width: var(--max-width);
+  width: 100%;
+  margin: auto;
+  padding: 130px 25px 80px;
+}
     /* =========================
         BUTTONS
     ========================= */
