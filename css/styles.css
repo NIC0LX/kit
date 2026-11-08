@@ -236,18 +236,22 @@
     /* =========================
         HERO
     ========================= */
-    .hero {
-      min-height: 100vh;
-      position: relative;
-      display: flex;
-      align-items: center;
-      overflow: hidden;
-      background:
-        linear-gradient(90deg, rgba(59,29,92,0.92) 0%, rgba(92,43,140,0.75) 42%, rgba(92,43,140,0.20) 100%),
-        url("imagenes/todos.jpg");    
-      background-size: cover;
-      background-position: center;
-    }
+  .hero {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+
+  background:
+    linear-gradient(90deg, rgba(59,29,92,0.65) 0%, rgba(92,43,140,0.40) 42%, rgba(92,43,140,0.10) 100%),
+    url("../imagenes/todos.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+    
 
     .hero-container {
       max-width: var(--max-width);
