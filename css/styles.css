@@ -233,31 +233,90 @@
       color: white;
     }
 
-  /* =========================
-    HERO
+ 
+/* =========================
+   HERO - TEXTOS Y TIPOGRAFÍA
 ========================= */
-.hero {
-  min-height: 100vh;
+
+.hero-content {
+  max-width: 650px;
+  color: white;
   position: relative;
+  z-index: 2;
+}
+
+.hero-content .eyebrow {
+  display: inline-block;
+  color: #f5c9a9;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 25px;
+}
+
+.hero-content h1 {
+  font-family: "Belanosima", sans-serif;
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  font-weight: 700;
+  line-height: 1.05;
+  color: #ffffff;
+  margin-bottom: 25px;
+  max-width: 650px;
+}
+
+.hero-content h1 span {
+  color: #f3a36f;
+  display: inline;
+}
+
+.hero-content p {
+  font-family: "Belanosima", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 1.8;
+  color: rgba(255,255,255,0.95);
+  max-width: 570px;
+  margin-bottom: 35px;
+}
+
+.hero-buttons {
   display: flex;
   align-items: center;
-  overflow: hidden;
-
-  background:
-    linear-gradient(90deg, rgba(59,29,92,0.65) 0%, rgba(92,43,140,0.40) 42%, rgba(92,43,140,0.10) 100%),
-    url("../imagenes/todos.jpg");
-
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  flex-wrap: wrap;
+  gap: 15px;
 }
 
-.hero-container {
-  max-width: var(--max-width);
-  width: 100%;
-  margin: auto;
-  padding: 130px 25px 80px;
+/* Ajustes para celulares */
+
+@media (max-width: 600px) {
+
+  .hero {
+    min-height: 90vh;
+    background-position: center;
+  }
+
+  .hero-container {
+    padding: 120px 22px 70px;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(2.8rem, 12vw, 4rem);
+    line-height: 1.08;
+  }
+
+  .hero-content p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
 }
+
     /* =========================
         BUTTONS
     ========================= */
