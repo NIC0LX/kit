@@ -592,7 +592,7 @@ h6,
       transform: translateY(-8px);
     }
 
-    .option-card.podcast-card {
+    .option-card.Historias-card {
       background: var(--lila);
     }
 
@@ -630,14 +630,14 @@ h6,
     }
 
     /* =========================
-        SECCIÓN INTERNA: PODCAST (Historias)
+        SECCIÓN INTERNA: Historias
     ========================= */
-    .podcast-view {
+    .Historias-view {
       background: var(--cream);
       padding-bottom: 100px;
     }
 
-    .podcast-grid {
+    .Historias-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 25px;
@@ -948,7 +948,7 @@ h6,
       .about-grid, .forum-container-inner, .guides-grid {
         grid-template-columns: 1fr;
       }
-      .options-grid, .podcast-grid, .values {
+      .options-grid, .Historias-grid, .values {
         grid-template-columns: 1fr;
       }
       .footer-grid {
@@ -963,7 +963,7 @@ h6,
 @media (max-width: 600px) {
 
   /* Separación de los bordes */
-  .podcast-view > .container,
+  .Historias-view > .container,
   .forum-view > .container,
   .support-view > .container {
     padding-left: 22px;
@@ -971,20 +971,20 @@ h6,
   }
 
   /* Espacio entre textos */
-  .podcast-view .section-label,
+  .Historias-view .section-label,
   .forum-view .section-label,
   .support-view .section-label {
     margin-bottom: 18px;
   }
 
-  .podcast-view .section-title,
+  .Historias-view .section-title,
   .forum-view .section-title,
   .support-view .section-title {
     line-height: 1.15;
     margin-bottom: 20px;
   }
 
-  .podcast-view .section-intro,
+  .Historias-view .section-intro,
   .forum-view .section-intro,
   .support-view .section-intro {
     line-height: 1.7;
