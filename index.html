@@ -37,7 +37,7 @@
       <nav>
         <ul class="nav-links">
           <li><a onclick="switchView('home')">Inicio</a></li>
-          <li><a onclick="switchView('podcast')">Historias</a></li>
+          <li><a onclick="switchView('Historias')">Historias</a></li>
           <li><a onclick="switchView('forum')">Foro Comunitario</a></li>
           <li><a onclick="switchView('support')">Guías de Apoyo</a></li>
           <li><a onclick="switchView('activities')">Encuentros</a></li>
@@ -72,7 +72,7 @@
             </p>
             <div class="hero-buttons">
               <button onclick="switchView('support')" class="button button-primary">Guías descargables</button>
-              <button onclick="switchView('podcast')" class="button button-light">Conoce sus historias</button>
+              <button onclick="switchView('Historias')" class="button button-light">Conoce sus historias</button>
             </div>
           </div>
         </div>
@@ -116,8 +116,8 @@
           <p class="section-intro">Elige el espacio que quieras visitar hoy.</p>
 
           <div class="options-grid">
-            <!-- OPCIÓN PODCAST -->
-            <article class="option-card podcast-card" onclick="switchView('podcast')">
+            <!-- OPCIÓN Historias -->
+            <article class="option-card Historias-card" onclick="switchView('Historias')">
               <div>
                 <div class="option-icon">🎧</div>
                 <h3>Escuchar</h3>
@@ -164,9 +164,9 @@
   </div>
 
   <!-- =========================================
-       VISTA 2: PODCAST & HISTORIAS (Sección Aparte)
+       VISTA 2: HISTORIAS (Sección Aparte)
   ========================================= -->
-  <div id="view-podcast" class="view-section podcast-view">
+  <div id="view-Historias" class="view-section Historias-view">
     <div class="back-nav-container">
       <button class="back-btn" onclick="switchView('home')">← Volver al inicio</button>
     </div>
@@ -175,7 +175,7 @@
       <h2 class="section-title">Historias de Mujeres Migrantes</h2>
       <p class="section-intro">Escucha experiencias reales de mujeres que han comenzado una nueva etapa en Bogotá.</p>
 
-      <div class="podcast-grid">
+      <div class="Historias-grid">
         <article class="story-card">
           <div class="story-image">
             <img src="IMG_A/Y1_1.jpg" alt="Episodio 1">
@@ -618,7 +618,7 @@
       <h4>Navegación</h4>
 
       <a onclick="switchView('home')">Inicio</a>
-      <a onclick="switchView('podcast')">Podcast</a>
+      <a onclick="switchView('Historias')">Historias</a>
       <a onclick="switchView('forum')">Foro</a>
       <a onclick="switchView('support')">Apoyo</a>
       <a onclick="switchView('activities')">Encuentros</a>
