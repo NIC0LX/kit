@@ -1304,3 +1304,28 @@ h6,
   }
 
 }
+
+/* =========================================
+   CASA NÓMADA
+   SEPARACIÓN ENTRE SECCIONES Y FOOTER
+========================================= */
+
+/* Espacio inferior en el foro */
+#view-forum {
+    padding-bottom: 100px;
+}
+
+/* Espacio inferior en las guías */
+#view-support {
+    padding-bottom: 100px;
+}
+
+/* Ajustes para celulares */
+@media (max-width: 600px) {
+
+    #view-forum,
+    #view-support {
+        padding-bottom: 70px;
+    }
+
+}
