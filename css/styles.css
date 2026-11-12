@@ -900,10 +900,14 @@ h6,
     }
 
     .footer-logo {
-      font-family: var(--serif);
-      font-size: 1.7rem;
-      margin-bottom: 15px;
-    }
+  margin-bottom: 15px;
+}
+
+.footer-logo img {
+  width: 180px;
+  height: auto;
+  display: block;
+}
 
     .footer-description {
       max-width: 400px;
