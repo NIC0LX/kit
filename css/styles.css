@@ -1511,3 +1511,73 @@ h6,
     }
 
 }
+
+/* =========================================
+   CASA NÓMADA
+   CORRECCIÓN GALERÍA EN COMPUTADORES
+========================================= */
+
+@media (min-width: 601px) {
+
+    /* Galería principal */
+
+    .activities-view .activity-gallery {
+        display: grid;
+        grid-template-columns: 1.2fr 0.9fr;
+        gap: 12px;
+
+        width: 100%;
+        height: auto !important;
+        overflow: visible !important;
+        align-items: start;
+    }
+
+    /* Imagen principal de la izquierda */
+
+    .activities-view .activity-gallery > img {
+        display: block;
+        width: 100%;
+        height: auto !important;
+        max-height: 480px;
+
+        object-fit: contain !important;
+        object-position: center top;
+
+        background: var(--lila-pale);
+        border-radius: 15px;
+    }
+
+    /* Contenedor de las dos imágenes pequeñas */
+
+    .activities-view .gallery-small {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+
+        width: 100%;
+        height: auto !important;
+        overflow: visible !important;
+    }
+
+    /* Imágenes pequeñas */
+
+    .activities-view .gallery-small img {
+        display: block;
+        width: 100%;
+        height: auto !important;
+        max-height: 230px;
+
+        object-fit: contain !important;
+        object-position: center;
+
+        background: var(--lila-pale);
+        border-radius: 15px;
+    }
+
+    /* Evitar ampliaciones que oculten contenido */
+
+    .activities-view .activity-gallery img:hover {
+        transform: none !important;
+    }
+
+}
