@@ -1333,3 +1333,55 @@ h6,
     }
 
 }
+
+/* =========================================
+   CASA NÓMADA - NAMA EN LAS TARJETAS
+========================================= */
+
+/* Contenedor de cada ilustración */
+
+.option-card .option-icon {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    width: 100%;
+    height: 130px;
+
+    margin-bottom: 20px;
+}
+
+/* Ilustraciones de Nama */
+
+.option-card .nama-card-img {
+    width: 145px;
+    height: 130px;
+
+    object-fit: contain;
+    object-position: left center;
+
+    display: block;
+
+    transition: transform 0.3s ease;
+}
+
+/* Movimiento suave al pasar el mouse */
+
+.option-card:hover .nama-card-img {
+    transform: scale(1.07);
+}
+
+/* Ajustes para celulares */
+
+@media (max-width: 600px) {
+
+    .option-card .option-icon {
+        height: 115px;
+    }
+
+    .option-card .nama-card-img {
+        width: 125px;
+        height: 115px;
+    }
+
+}
