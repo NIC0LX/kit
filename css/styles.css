@@ -347,15 +347,17 @@ h6,
   z-index: 2;
 }
 
+
 .hero-content .eyebrow {
   display: inline-block;
-  color: #f5c9a9;
+  color: var(--cream);
   font-size: 0.85rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 3px;
   margin-bottom: 25px;
 }
+
 
 .hero-content h1 {
   font-family: "Belanosima", sans-serif;
@@ -367,10 +369,12 @@ h6,
   max-width: 650px;
 }
 
+
 .hero-content h1 span {
-  color: #f3a36f;
+  color: var(--lila-light);
   display: inline;
 }
+
 
 .hero-content p {
   font-family: "Belanosima", sans-serif;
