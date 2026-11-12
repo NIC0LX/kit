@@ -228,154 +228,239 @@
     </div>
   </div>
 
-  <!-- =========================================
-       VISTA 3: FORO COMUNITARIO
-  ========================================= -->
-  <div id="view-forum" class="view-section forum-view">
+  
+<!-- =========================================
+     VISTA 3: FORO COMUNITARIO
+========================================= -->
+
+<div id="view-forum" class="view-section forum-view">
+
     <div class="back-nav-container">
-      <button class="back-btn" onclick="switchView('home')">← Volver al inicio</button>
-    </div>
-    <div class="container">
-      <div class="section-label">Comunidad Segura</div>
-      <h2 class="section-title">Foro de Intercambio mutuo de experiencias</h2>
-      <p class="section-intro">Por seguridad y para cuidar este espacio, crea un usuario antes de escribir o publicar tus comentarios.</p>
-
-      <div class="forum-container-inner">
-        <!-- COLUMNA IZQUIERDA: REGISTRO DE USUARIO Y NUEVO POST -->
-        <div>
-          <!-- PASO 1: CREAR USUARIO -->
-          <div class="auth-box" id="auth-container">
-            
-<!-- REGISTRO E INICIO DE SESION -->
-
-<div class="auth-box" id="auth-container">
-
-    <h3 id="auth-title">Crea tu cuenta</h3>
-
-    <p>
-        Bienvenida a Casa Nómada.
-        Usa un apodo para participar en nuestra comunidad.
-    </p>
-
-    <div class="form-group" id="nombre-grupo">
-        <label for="username-input">Tu nombre o apodo:</label>
-
-        <input
-            type="text"
-            id="username-input"
-            class="form-control"
-            placeholder="Ejemplo: Luna_Bogotá"
-            maxlength="40"
-        >
-    </div>
-
-    <div class="form-group">
-        <label for="email-input">Correo electrónico:</label>
-
-        <input
-            type="email"
-            id="email-input"
-            class="form-control"
-            placeholder="ejemplo@gmail.com"
-            autocomplete="email"
-        >
-    </div>
-
-    <div class="form-group">
-        <label for="password-input">Contraseña:</label>
-
-        <input
-            type="password"
-            id="password-input"
-            class="form-control"
-            placeholder="Mínimo 8 caracteres"
-            autocomplete="new-password"
-        >
-    </div>
-
-    <button
-        type="button"
-        id="btn-registro"
-        class="button button-primary"
-        onclick="registrarUsuario()"
-        style="width:100%;"
-    >
-        Crear mi cuenta
-    </button>
-
-    <button
-        type="button"
-        id="btn-login"
-        class="button button-primary"
-        onclick="iniciarSesion()"
-        style="width:100%; display:none;"
-    >
-        Iniciar sesión
-    </button>
-
-    <p style="margin-top:20px; text-align:center;">
-        <button
-            type="button"
-            id="auth-toggle"
-            onclick="cambiarModoAcceso()"
-            style="border:none; background:none;
-                   color:#5c2b8c; cursor:pointer;
-                   text-decoration:underline;"
-        >
-            ¿Ya tienes cuenta? Inicia sesión
+        <button class="back-btn" onclick="switchView('home')">
+            ← Volver al inicio
         </button>
-    </p>
+    </div>
 
-    <p
-        id="auth-message"
-        role="status"
-        style="margin-top:15px; color:#5c2b8c;"
-    ></p>
+    <div class="container">
 
-    <p style="font-size:0.8rem; margin-top:15px;">
-        Tu correo será privado. Evita compartir
-        teléfonos, direcciones o información
-        personal en tus publicaciones.
-    </p>
+        <div class="section-label">Comunidad Segura</div>
 
-</div>
+        <h2 class="section-title">
+            Foro de Intercambio mutuo de experiencias
+        </h2>
 
+        <p class="section-intro">
+            Un espacio para compartir experiencias,
+            hacer preguntas y acompañarnos.
+            Regístrate para participar.
+        </p>
 
-          <!-- PASO 2: CREAR PUBLICACIÓN (Oculto hasta registrarse) -->
-          <div class="new-post-box" id="post-container" style="display: none; margin-top: 20px;">
-            <div class="user-badge">
-              <span>👤 Conectada como: <strong id="display-user"></strong></span>
-              <button onclick="cerrarSesion()" style="background:none; border:none; color:var(--violet); font-size:0.75rem; cursor:pointer; text-decoration:underline;">Cambiar</button>
+        <div class="forum-container-inner">
+
+            <!-- COLUMNA IZQUIERDA -->
+            <div>
+
+                <!-- REGISTRO E INICIO DE SESIÓN -->
+
+                <div class="auth-box" id="auth-container">
+
+                    <h3 id="auth-title">Crea tu cuenta</h3>
+
+                    <p>
+                        Bienvenida a Casa Nómada.
+                        Regístrate para compartir tus experiencias.
+                    </p>
+
+                    <div class="form-group" id="nombre-grupo">
+
+                        <label for="username-input">
+                            Tu nombre o apodo:
+                        </label>
+
+                        <input
+                            type="text"
+                            id="username-input"
+                            class="form-control"
+                            placeholder="Ejemplo: Luna_Bogotá"
+                            maxlength="40"
+                        >
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="email-input">
+                            Correo electrónico:
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email-input"
+                            class="form-control"
+                            placeholder="ejemplo@gmail.com"
+                        >
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="password-input">
+                            Contraseña:
+                        </label>
+
+                        <input
+                            type="password"
+                            id="password-input"
+                            class="form-control"
+                            placeholder="Mínimo 8 caracteres"
+                        >
+
+                    </div>
+
+                    <button
+                        type="button"
+                        id="btn-registro"
+                        class="button button-primary"
+                        onclick="registrarUsuario()"
+                        style="width:100%;"
+                    >
+                        Crear mi cuenta
+                    </button>
+
+                    <button
+                        type="button"
+                        id="btn-login"
+                        class="button button-primary"
+                        onclick="iniciarSesion()"
+                        style="width:100%; display:none;"
+                    >
+                        Iniciar sesión
+                    </button>
+
+                    <p style="margin-top:20px; text-align:center;">
+
+                        <button
+                            type="button"
+                            id="auth-toggle"
+                            onclick="cambiarModoAcceso()"
+                            style="background:none;
+                                   border:none;
+                                   color:#5c2b8c;
+                                   text-decoration:underline;
+                                   cursor:pointer;"
+                        >
+                            ¿Ya tienes cuenta? Inicia sesión
+                        </button>
+
+                    </p>
+
+                    <p
+                        id="auth-message"
+                        role="status"
+                        style="margin-top:15px;"
+                    ></p>
+
+                </div>
+
+                <!-- CREAR PUBLICACIÓN -->
+
+                <div
+                    class="new-post-box"
+                    id="post-container"
+                    style="display:none; margin-top:20px;"
+                >
+
+                    <div class="user-badge">
+
+                        <span>
+                            👤 Conectada como:
+                            <strong id="display-user"></strong>
+                        </span>
+
+                        <button
+                            type="button"
+                            onclick="cerrarSesion()"
+                            style="background:none;
+                                   border:none;
+                                   color:#5c2b8c;
+                                   cursor:pointer;"
+                        >
+                            Cerrar sesión
+                        </button>
+
+                    </div>
+
+                    <h3>Crear una nueva conversación</h3>
+
+                    <div class="form-group">
+
+                        <label for="post-title">
+                            Título o pregunta:
+                        </label>
+
+                        <input
+                            type="text"
+                            id="post-title"
+                            class="form-control"
+                            placeholder="¿Cómo hicieron para...?"
+                            maxlength="150"
+                        >
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="post-content">
+                            Tu mensaje:
+                        </label>
+
+                        <textarea
+                            id="post-content"
+                            class="form-control"
+                            placeholder="Comparte tu experiencia..."
+                            maxlength="5000"
+                        ></textarea>
+
+                    </div>
+
+                    <button
+                        type="button"
+                        class="button button-primary"
+                        onclick="publicarMensaje()"
+                        style="width:100%;"
+                    >
+                        Publicar en el Foro
+                    </button>
+
+                </div>
+
             </div>
-            <h3>Crear una nueva conversación</h3>
-            <div class="form-group">
-              <label for="post-title">Título o pregunta:</label>
-              <input type="text" id="post-title" class="form-control" placeholder="¿Cómo hicieron para...">
+
+            <!-- COLUMNA DERECHA -->
+
+            <div class="forum-list-box">
+
+                <h3>Conversaciones Activas</h3>
+
+                <div
+                    class="forum-posts-feed"
+                    id="posts-feed"
+                >
+                    <p>Cargando conversaciones...</p>
+                </div>
+
             </div>
-            <div class="form-group">
-              <label for="post-content">Tu mensaje:</label>
-              <textarea id="post-content" class="form-control" placeholder="Comparte tu experiencia de manera respetuosa..."></textarea>
-            </div>
-            <button class="button button-primary" onclick="publicarMensaje()" style="width: 100%;">Publicar en el Foro</button>
-          </div>
+
         </div>
 
-        <!-- COLUMNA DERECHA: LISTA DE PUBLICACIONES DEL FORO -->
-        <div class="forum-list-box">
-  <h3>Conversaciones Activas</h3>
-
-  <div class="forum-posts-feed" id="posts-feed">
-    <p>Cargando conversaciones...</p>
-  </div>
-</div>
+    </div>
 
 </div>
-</div>
-</div>
 
-  <!-- =========================================
-       VISTA 4: APOYO Y GUÍAS (Sección Aparte)
-  ========================================= -->
+<!-- =========================================
+     VISTA 4: APOYO Y GUÍAS
+========================================= -->
+
   <div id="view-support" class="view-section support-view">
     <div class="back-nav-container">
       <button class="back-btn" onclick="switchView('home')">← Volver al inicio</button>
