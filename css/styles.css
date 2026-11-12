@@ -1391,3 +1391,123 @@ h6,
     }
 
 }
+
+/* =========================================
+   CASA NÓMADA
+   CORRECCIÓN DE FOTOGRAFÍAS EN ENCUENTROS
+========================================= */
+
+/* Contenedor de las tres fotografías */
+
+.activity-gallery {
+    display: grid;
+    grid-template-columns: 1.2fr 0.9fr;
+    gap: 12px;
+
+    width: 100%;
+    height: 420px;
+
+    overflow: visible;
+    border-radius: 20px;
+    align-items: stretch;
+}
+
+/* Fotografía principal de la izquierda */
+
+.activity-gallery > img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+    object-position: center;
+
+    background: var(--lila-pale);
+    border-radius: 15px;
+}
+
+/* Contenedor de las dos fotografías pequeñas */
+
+.gallery-small {
+    display: grid;
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+
+    height: 100%;
+    min-height: 0;
+    overflow: visible;
+}
+
+/* Fotografías pequeñas */
+
+.gallery-small img {
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+
+    object-fit: contain;
+    object-position: center;
+
+    background: var(--lila-pale);
+    border-radius: 15px;
+}
+
+/* Evitar que las fotos se salgan al pasar el mouse */
+
+.activity-gallery img:hover {
+    transform: none;
+}
+
+/* =========================================
+   AJUSTES PARA TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .activity-gallery {
+        height: 380px;
+        grid-template-columns: 1.2fr 0.9fr;
+    }
+
+}
+
+/* =========================================
+   AJUSTES PARA CELULARES
+========================================= */
+
+@media (max-width: 600px) {
+
+    .activity-gallery {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 12px;
+
+        height: auto;
+        overflow: visible;
+    }
+
+    /* Imagen principal */
+
+    .activity-gallery > img {
+        width: 100%;
+        height: 260px;
+        object-fit: contain;
+    }
+
+    /* Dos imágenes debajo */
+
+    .gallery-small {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-rows: 1fr;
+        gap: 10px;
+
+        height: 170px;
+    }
+
+    .gallery-small img {
+        width: 100%;
+        height: 170px;
+        object-fit: contain;
+    }
+
+}
