@@ -1011,13 +1011,15 @@ h6,
 }
 
 .activities-heading {
-  text-align: center;
-  max-width: 800px;
-  margin: 20px auto 75px;
+    text-align: left;
+    max-width: 100%;
+    margin: 20px 0 75px;
 }
 
 .activities-heading .section-intro {
-  margin: auto;
+    margin-left: 0;
+    margin-right: 0;
+    max-width: 650px;
 }
 
 .activities-counter {
