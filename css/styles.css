@@ -1929,3 +1929,198 @@ h6,
         font-size: 0.88rem;
     }
 }
+
+
+/* =========================================
+   CASA NÓMADA
+   TARJETA DE APOYO PSICOLÓGICO
+========================================= */
+
+/* TARJETA PRINCIPAL */
+
+#view-support .apoyo-emocional {
+    display: block;
+
+    width: 100%;
+    max-width: 1100px;
+
+    margin: 55px auto 70px;
+    padding: 40px;
+
+    background: var(--lila-pale);
+    border: 2px solid var(--lila-light);
+    border-radius: 25px;
+
+    box-sizing: border-box;
+}
+
+/* ENCABEZADO CENTRADO */
+
+.apoyo-emocional-encabezado {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.apoyo-etiqueta {
+    display: inline-block;
+
+    color: var(--violet);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+
+    margin-bottom: 15px;
+}
+
+.apoyo-emocional h3 {
+    font-family: var(--serif);
+    font-size: 2rem;
+
+    color: var(--violet-dark);
+    text-align: center;
+
+    margin-bottom: 20px;
+}
+
+.apoyo-emocional-encabezado p {
+    color: var(--gray);
+
+    font-family: var(--sans);
+    font-size: 1rem;
+    line-height: 1.7;
+
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+/* LAS DOS TARJETAS INTERNAS */
+
+#view-support .apoyo-lineas {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 25px;
+    margin-top: 30px;
+}
+
+#view-support .apoyo-linea {
+    background: white;
+
+    padding: 30px;
+    border-radius: 20px;
+
+    border: 1px solid var(--border);
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* TÍTULOS */
+
+.apoyo-linea h4 {
+    font-family: var(--serif);
+
+    font-size: 1.3rem;
+    color: var(--violet-dark);
+
+    margin-bottom: 15px;
+}
+
+/* NÚMEROS ROJOS */
+
+#view-support .apoyo-numero {
+    display: block;
+
+    font-family: var(--serif);
+    font-size: 2.7rem;
+
+    color: #b42335;
+
+    margin-bottom: 15px;
+}
+
+/* DESCRIPCIÓN */
+
+.apoyo-linea p {
+    color: var(--gray);
+
+    font-family: var(--sans);
+    font-size: 0.95rem;
+    line-height: 1.7;
+
+    margin-bottom: 25px;
+}
+
+/* BOTONES MORADOS */
+
+#view-support .apoyo-boton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: auto;
+    padding: 12px 22px;
+
+    background: var(--violet);
+    color: white;
+
+    border-radius: 50px;
+
+    font-family: var(--sans);
+    font-weight: 700;
+
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+#view-support .apoyo-boton:hover {
+    background: var(--violet-dark);
+    color: white;
+}
+
+/* MENSAJE FINAL */
+
+.apoyo-mensaje-final {
+    max-width: 850px;
+
+    margin: 30px auto 0;
+
+    text-align: center;
+    color: var(--violet-dark);
+
+    font-size: 0.9rem;
+    line-height: 1.7;
+}
+
+/* =========================================
+   VERSIÓN PARA CELULARES
+========================================= */
+
+@media (max-width: 700px) {
+
+    #view-support .apoyo-emocional {
+        padding: 25px 20px;
+        margin: 40px auto 60px;
+    }
+
+    #view-support .apoyo-lineas {
+        grid-template-columns: 1fr;
+    }
+
+    #view-support .apoyo-linea {
+        padding: 25px 20px;
+    }
+
+    .apoyo-emocional h3 {
+        font-size: 1.7rem;
+    }
+
+    #view-support .apoyo-boton {
+        width: 100%;
+    }
+
+}
+
